@@ -1,6 +1,10 @@
 #include <iostream>
 using namespace std;
 int main(){
-  cout<<"lab 2 is not ready!";
-
+  int n;
+  cin>>n;
+  
+  if(n == 0)cout<<"None";
+  else if(n%2 == 0)cout<<"Even";
+  else cout<<"Odd";
 }
