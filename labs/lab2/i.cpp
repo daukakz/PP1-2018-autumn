@@ -11,5 +11,5 @@ int main(){
         cin>>x;
         if(x % 10 == 0)ans++;
     }   
-    cout<<zeros;
+    cout<<ans;
 }
