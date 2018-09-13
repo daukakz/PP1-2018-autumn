@@ -9,7 +9,7 @@ int main(){
     for(int i = 0; i < n; i++){
         int x;
         cin>>x;
-        if(x % 10 == 0)ans++;
+        if(x % 10 == 7)ans++;
     }   
     cout<<ans;
 }
