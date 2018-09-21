@@ -5,12 +5,12 @@ int main(){
     
     cin>>n;
 
-    int k = 0;
+    int sum = 0;
     
     for(int i = 2; i < n; i++){
         int x;
         cin >> x;
-        if(x % 3 == 0 || x % 5 == 0 || x % 7 == 0)k++;
+        if(x % 3 == 0 || x % 5 == 0 || x % 7 == 0)sum += x;
     }
-    cout<<k;
+    cout<<sum;
 }
