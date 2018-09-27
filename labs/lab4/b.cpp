@@ -30,7 +30,7 @@ int main () {
         }
     }
 
-    if(max2 == -100001)cout<<-1;
+    if(max2 == -1000000001; )cout<<0;
     else cout<<max2;
 
 }
