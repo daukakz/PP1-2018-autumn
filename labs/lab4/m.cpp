@@ -1,38 +1,37 @@
 #include <iostream>
-#include <cmath>
 using namespace std;
-
-
-int main()
-{
+int main(){
     int n;
-    cin>>n;                           	 
-    int arr[n][n];
-    int len = n,k = 1, p = 0, i;
-    
-	while(k <= n*n){
-		for(i=p;i<len;i++){
-			arr[p][i]=k++;
-		}
-		for(i=p+1;i<len;i++){
-			arr[i][len-1]=k++;
-		}
-		for(i=len-2;i>=p;i--){
-			arr[len-1][i]=k++;
-		}
-		for(i=len-2;i>p;i--)	 {
-			arr[i][p]=k++;
-		}
-		p++,len=len-1; 
+    cin>>n;
+    int a[n][n];
+    for(int i=0;i<n;i++)
+    	for(int j=0;j<n;j++)a[i][j]=0;
+    a[0][0]=1;
+    a[0][1]=2;
+    int i=0,j=1;
+    int x=2;
+    while(x!=n*n){
+    if(a[i][j-1]==x-1){
+        if(!a[i][j+1]&&j+1<n)j++;
+    	else i++;
     }
-    if(!n%2){
-		arr[(n+1)/2][(n+1)/2]=n*n;
+    else if(a[i-1][j]==x-1){
+        if(!a[i+1][j]&&i+1<n)i++;
+        else j--;
     }
-    for(int i = 0 ; i<n; i++){
-		for(int j=0;j<n;j++){
-			cout<<arr[i][j]<<" ";
-		}
-		cout<<endl;
+    else if(a[i][j+1]==x-1){
+        if(!a[i][j-1]&&j>0)j--;
+        else i--;
     }
+    else {
+        if(!a[i-1][j]&&i>0)i--;
+        else j++;
+    }
+    x++;
+    a[i][j]=x;
+    }
+    for(int i=0;i<n;i++){
+        for(int j=0;j<n;j++)cout<<a[i][j]<<" ";
+        cout<<endl;}
     return 0;
 }
