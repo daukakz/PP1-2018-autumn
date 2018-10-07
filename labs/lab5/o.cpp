@@ -4,24 +4,12 @@ int main(){
     string s;
     cin>>s;
     
-    int cnt[26];
-    for(int i = 0; i < 26; i++){
-        cnt[i] = 0;   
-    }
+    char output = 'a';
     
     for(int i = 0; i < s.size(); i++){
-        int a = s[i] - 'a';
-        cnt[a]++;
+        output = max(s[i], output);   
     }
     
-    int pop = 0;
-    char x = 0;
-    for(int i = 0; i < s.size(); i++){
-        int a = s[i] - 'a';
-        if(cnt[a] > pop){
-            pop = cnt[a];
-            x = 'a' + i;
-        }
-    }
-    cout<<x;
+    cout<<output;
+   
 }
