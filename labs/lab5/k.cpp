@@ -5,7 +5,8 @@ int main(){
     cin>>s;
     
     int vowel = 0;
-    for(int i = 0; i < 26; i++){
+    int n = s.size();
+    for(int i = 0; i < n; i++){
         if(s[i] == 'a' || s[i] == 'e' || s[i] == 'u' || s[i] == 'o' || s[i] == 'u'){
             vowel++;
         }
